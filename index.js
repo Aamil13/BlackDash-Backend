@@ -1,11 +1,13 @@
 const express = require('express');
+const cors = require('cors')
 require("dotenv").config()
 const connectdb = require("./Utils/ConnectDB")
 const DashRoute = require("./Routes/DashRoute")
 
 //init express app instanse
 const app = express()
-
+app.use(cors())
+app.use(express.json())
 //database
     connectdb()
 
